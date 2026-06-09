@@ -4,6 +4,7 @@ return {
     config = function()
       vim.lsp.enable('clangd')
       vim.lsp.enable('lua_ls')
+      vim.lsp.enable('bashls')
 
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
