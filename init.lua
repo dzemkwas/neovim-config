@@ -1,15 +1,11 @@
 require("config.lazy")
 
+require("config.keymaps")
+
 vim.opt.shiftwidth = 4
 vim.opt.number = true
 vim.opt.clipboard = "unnamedplus"
 
-vim.keymap.set('n', '<C-s>', ':w <cr>')
-vim.keymap.set('n', '<space><space>x', '<cmd>source % <cr>')
-vim.keymap.set('n', '<space>x', ':.lua<cr>')
-vim.keymap.set('v', '<space>x', ':lua<cr>')
-vim.keymap.set('n', '-', ':Oil <cr>')
-vim.keymap.set('n', '<space>t', ':Floaterminal<cr>')
 
 vim.diagnostic.config({
   virtual_text = true,
