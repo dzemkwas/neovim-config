@@ -16,3 +16,9 @@ vim.keymap.set("n", "<space>en", function()
     cwd = vim.fn.stdpath("config")
   }
 end)
+
+-- ToggleTerm
+vim.keymap.set('n', '<space>t', ":ToggleTerm<cr>")
+vim.keymap.set('t', '<esc>', [[<C-\><C-n>]])
+vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]])
+vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]])
