@@ -1,10 +1,20 @@
 return {
-  {
-    "neovim/nvim-lspconfig",
+    "mason-org/mason-lspconfig.nvim",
+    opts = {
+        ensure_installed = { "lua_ls", "clangd", "bashls" },
+    },
+    dependencies = {
+        { "mason-org/mason.nvim", opts = {} },
+        "neovim/nvim-lspconfig",
+    },
+   --[[ 
     config = function()
-      vim.lsp.enable('clangd')
-      vim.lsp.enable('lua_ls')
-      vim.lsp.enable('bashls')
+      vim.lsp.config['clangd'] = {
+	init_options = {
+	  fallbackFlags = {'--std=c++23'}
+	},
+
+      }
 
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
@@ -22,5 +32,5 @@ return {
         end
       })
     end
-  }
+    --]]
 }

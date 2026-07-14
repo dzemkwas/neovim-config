@@ -1,5 +1,5 @@
 require("config.lazy")
-
+require("config.lsp")
 require("config.keymaps")
 
 vim.opt.shiftwidth = 4
